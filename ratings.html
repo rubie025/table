@@ -1,0 +1,51 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="rating_style.css">
+  <script type="text/javascript">
+  
+    function insert_like()
+    {
+	  $.ajax({
+	    type: 'post',
+	    url: 'store_rating.php',
+	    data: {
+	      post_like:"like"
+	    },
+	    success: function (response) {
+ 	      $('#totalvotes').slideDown()
+	      {			
+	        $('#totalvotes').html(response);
+	      }
+	    }
+	    });
+    }
+
+    function insert_like()
+    {
+	  $.ajax({
+	    type: 'post',
+	    url: 'store_rating.php',
+	    data: {
+	      post_dislike:"dislike"
+	    },
+	    success: function (response) {
+ 	      $('#totalvotes').slideDown()
+	      {			
+	        $('#totalvotes').html(response);
+	      }
+	    }
+	    });
+    }
+</script>
+  
+</head>
+
+<body>
+  <h1>Youtube Style Like and Dislike Rating System Using jQuery,Ajax and PHP</h1>
+
+  <input type="image" src="like.png" onclick="insert_like();" id="like_button">
+  <input type="image" src="dislike.png" onclick="insert_dislike();" id="dislike_button">
+  <div id="totalvotes"></div>
+
+</body>
+</html>
